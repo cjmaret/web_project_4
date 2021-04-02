@@ -50,7 +50,7 @@ function addInfo() {
 saveButton.addEventListener("click", addInfo);
 
 
-// // Heart Black on Active
+// Heart Black on Active // 
 
 let heart = document.querySelectorAll(".image-grid__heart");
 

@@ -15,6 +15,3 @@
     outline: 0;
 }
 
-.image-grid__button-like:focus .image-grid__heart {
-    fill: black;
-}

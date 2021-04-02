@@ -52,13 +52,12 @@ saveButton.addEventListener("click", addInfo);
 
 // // Heart Black on Active
 
-// let heart = document.querySelector(".image-grid__heart");
+let heart = document.querySelectorAll(".image-grid__heart");
 
-// let heartButton = document.querySelector(".image-grid__button-like");
 
-// function blackHeart() {
-//     heart.setAttribute("style", "fill: black");
-// };
-
-// heartButton.addEventListener("click", blackHeart);
-
+for (let i = 0; i < heart.length; i++) {
+    heart[i].addEventListener("click", function() {
+        heart[i].classList.toggle("black-heart");
+    });
+ }
+ 

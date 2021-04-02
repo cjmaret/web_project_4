@@ -1,0 +1,20 @@
+.image-grid__button-like {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: auto 18px auto 0;
+    transition: .4s ease;
+}
+
+.image-grid__button-like:hover {
+    opacity: .5;
+    cursor: pointer;
+}
+
+.image-grid__button-like:focus {
+    outline: 0;
+}
+
+.image-grid__button-like:focus .image-grid__heart {
+    fill: black;
+}

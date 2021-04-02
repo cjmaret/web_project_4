@@ -1,0 +1,22 @@
+.edit-profile__close-icon {
+    width: 60px;
+    height: 60px;
+    margin-left: auto;
+    transition: .4s ease;
+    z-index: 5;
+    position: relative;
+    top: 10px;
+}
+
+.edit-profile__close-icon:hover {
+    opacity: .6;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 550px) {
+    .edit-profile__close-icon {
+        width: 35px;
+        height: 35px;
+        top: 0;
+    }
+}

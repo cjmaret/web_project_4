@@ -1,0 +1,6 @@
+.image-grid__text {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    margin-top: 0;
+}

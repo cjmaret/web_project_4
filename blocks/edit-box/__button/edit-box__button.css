@@ -1,0 +1,24 @@
+.edit-box__button {
+    width: 83.25%;
+    height: 50.15px;
+    background-color: black;
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21.78px;
+    border-radius: 2px;
+    border: none;
+    transition: .4s ease;
+}
+
+.edit-box__button:hover {
+    opacity: .6;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 550px) {
+    .edit-box__button {
+        font-size: 14px;
+        line-height: 16.94px;
+    }
+}

@@ -1,0 +1,11 @@
+.profile__box-left {
+    display: flex;
+}
+
+@media only screen and (max-width: 704px) {
+    .profile__box-left {
+        width: 100%;
+        flex-direction: column;
+        margin: auto;
+    }
+}

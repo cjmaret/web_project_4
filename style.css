@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;900&display=swap');
+@import url("./vendor/normalize.css");
+@import url("./vendor/fonts.css");
 
 .page {
     max-width: 1280px;
@@ -258,9 +259,17 @@
     cursor: pointer;
 }
 
-/* .image-grid__button-like:active .image-grid__heart {
+.image-grid__button-like:focus {
+    outline: 0;
+}
+
+.image-grid__button-like:focus .image-grid__heart {
     fill: black;
-} */
+}
+
+.image-grid__heart:focus {
+    fill: black;
+}
 
 .footer {
     max-width: 880px;
@@ -481,3 +490,48 @@
     }
     
 }
+
+
+
+
+
+
+
+
+/* .heart {
+    color: red;
+    background-color: currentColor;
+    display: inline-block;
+    height: 50px;
+    margin: 0 10px;
+    position: relative;
+    top: 0;
+    transform: rotate(-45deg);
+    position: absolute; 
+    left: 45%; top: 45%;
+    width: 50px;
+  }
+  
+  .heart::before,
+  .heart::after {
+    content: "";
+    background-color: currentColor;
+    border-radius: 50%;
+    height: 50px;
+    position: absolute;
+    width: 50px;
+  }
+  
+  .heart:before {
+    top: -25px;
+    left: 0;
+  }
+  
+  .heart:after {
+    left: 25px;
+    top: 0;
+  }
+  
+  .heart:focus {
+    color: black;
+  } */

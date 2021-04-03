@@ -60,4 +60,3 @@ for (let i = 0; i < heart.length; i++) {
         heart[i].classList.toggle("black-heart");
     });
  }
- 

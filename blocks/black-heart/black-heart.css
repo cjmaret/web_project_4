@@ -1,4 +1,5 @@
 .black-heart {
-    fill: black;
-    transition: .4s ease;
+    width: 21px;
+    height: 19px;
+    background-image: url("../../Images/black-heart.svg");
 }

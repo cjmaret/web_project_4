@@ -1,11 +1,10 @@
-@import url("./__box-left/profile__box-left.css");
+@import url("./__details/profile__details.css");
 @import url("./__button-add/profile__button-add.css");
 @import url("./__button-edit/profile__button-edit.css");
 @import url("./__image/profile__image.css");
 @import url("./__info/profile__info.css");
 @import url("./__line-top/profile__line-top.css");
 @import url("./__subtitle/profile__subtitle.css");
-@import url("./__symbol-edit/profile__symbol-edit.css");
 @import url("./__title/profile__title.css");
 
 

@@ -1,6 +1,7 @@
-.image-grid__text {
+.image-card__text {
     display: flex;
     justify-content: space-between;
     background-color: white;
     margin-top: 0;
+    border-radius: 0 0 10px 10px;
 }

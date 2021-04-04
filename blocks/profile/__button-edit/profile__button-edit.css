@@ -7,6 +7,9 @@
     border: 1px solid white;
     box-shadow: none;
     transition: .4s ease;
+    background-image: url("../../../Images/edit-pencil.svg");
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .profile__button-edit:hover {

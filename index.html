@@ -11,105 +11,75 @@
 <body class="page">
 
     <header class="header">
-        <img class="logo" src="Images/logo.png" alt="logo" />
+        <img class="logo" src="Images/logo.svg" alt="logo" />
     </header>
 
 
     <main class="main">
 
         <section class="profile">
-            <div class="profile__box-left">
+            <div class="profile__details">
                 <img class="profile__image" src="Images/jacques-cousteau.jpg" alt="profile photo" />
                 <div class="profile__info">
                     <div class="profile__line-top">
                         <h1 class="profile__title">Jacques Cousteau</h1>
-                        <button class="profile__button-edit"><img class="profile__symbol-edit"
-                                src="./Images/edit-pencil.svg" alt="edit symbol" /></button>
+                        <button class="profile__button-edit" type="button" aria-label="edit button"></button>
                     </div>
                     <p class="profile__subtitle">Explorer</p>
                 </div>
             </div>
-            <button class="profile__button-add"><img class="profile__symbol-add" src="./Images/add-button.svg"
-                    alt="add symbol" /></button>
+            <button class="profile__button-add" type="submit" aria-label="add button"></button>
         </section>
-
-        <section class="edit-profile">
-            <div class="edit-profile__container">
-                <img class="edit-profile__close-icon" src="Images/close-icon.svg" alt="x-icon" />
-                <div class="edit-box">
-                    <h2 class="edit-box__title">Edit profile</h2>
-                    <div class="edit-box__inputs">
-                        <input class="edit-box__input edit-box__input_title" type="text" placeholder="Jacques Cousteau">
-                        <input class="edit-box__input edit-box__input_subtitle" type="text" placeholder="Explorer">
-                    </div>
-                    <button class="edit-box__button">Save</button>
-                </div>
-            </div>
-        </section>
-
-
 
 
         <section class="image-grid">
 
-            <div class="image-grid__card">
-                <img class="image-grid__image" src="Images/yosemite-valley.jpg" alt="yosemite valley photo" />
-                <div class="image-grid__text">
-                    <h2 class="image-grid__title">Yosemite Valley</h2>
-                    <button class="image-grid__button-like">
-                        <div class="image-grid__heart" role="img" aria-label="Like image"></div>
-                    </button>
+            <div class="image-card">
+                <img class="image-card__image" src="Images/yosemite-valley.jpg" alt="yosemite valley photo" />
+                <div class="image-card__text">
+                    <h2 class="image-card__title">Yosemite Valley</h2>
+                    <button class="image-card__heart" role="img" aria-label="Like button" type="button"></button>
                 </div>
             </div>
 
-            <div class="image-grid__card">
-                <img class="image-grid__image" src="Images/lake-louise.png" alt="lake louise photo" />
-                <div class="image-grid__text">
-                    <h2 class="image-grid__title">Lake Louise</h2>
-                    <button class="image-grid__button-like">
-                        <div class="image-grid__heart" role="img" aria-label="Like image"></div>
-                    </button>
+            <div class="image-card">
+                <img class="image-card__image" src="Images/lake-louise.png" alt="lake louise photo" />
+                <div class="image-card__text">
+                    <h2 class="image-card__title">Lake Louise</h2>
+                    <button class="image-card__heart" role="img" aria-label="Like button" type="button"></button>
                 </div>
             </div>
 
-            <div class="image-grid__card">
-                <img class="image-grid__image" src="Images/bald-mountains.png" alt="bald mountains photo" />
-                <div class="image-grid__text">
-                    <h2 class="image-grid__title">Bald Mountains</h2>
-                    <button class="image-grid__button-like">
-                        <div class="image-grid__heart" role="img" aria-label="Like image"></div>
-                    </button>
+            <div class="image-card">
+                <img class="image-card__image" src="Images/bald-mountains.png" alt="bald mountains photo" />
+                <div class="image-card__text">
+                    <h2 class="image-card__title">Bald Mountains</h2>
+                    <button class="image-card__heart" role="img" aria-label="Like button" type="button"></button>
                 </div>
             </div>
 
-            <div class="image-grid__card">
-                <img class="image-grid__image" src="Images/latemar.png" alt="latemar photo" />
-                <div class="image-grid__text">
-                    <h2 class="image-grid__title">Latemar</h2>
-                    <button class="image-grid__button-like">
-                        <div class="image-grid__heart" role="img" aria-label="Like image"></div>
-                    </button>
+            <div class="image-card">
+                <img class="image-card__image" src="Images/latemar.png" alt="latemar photo" />
+                <div class="image-card__text">
+                    <h2 class="image-card__title">Latemar</h2>
+                    <button class="image-card__heart" role="img" aria-label="Like button" type="button"></button>
                 </div>
             </div>
 
-            <div class="image-grid__card">
-                <img class="image-grid__image" src="Images/vanoise-national-park.png"
+            <div class="image-card">
+                <img class="image-card__image" src="Images/vanoise-national-park.png"
                     alt="vanoise national park photo" />
-                <div class="image-grid__text">
-                    <h2 class="image-grid__title">Vanoise National Park</h2>
-                    <button class="image-grid__button-like">
-                        <div class="image-grid__heart" role="img" aria-label="Like image"></div>
-                    </button>
+                <div class="image-card__text">
+                    <h2 class="image-card__title">Vanoise National Park</h2>
+                    <button class="image-card__heart" role="img" aria-label="Like button" type="button"></button>
                 </div>
             </div>
 
-            <div class="image-grid__card">
-                <img class="image-grid__image" src="Images/lago-di-braies.png" alt="lago di braies photo" />
-                <div class="image-grid__text">
-                    <h2 class="image-grid__title">Lago di Braies</h2>
-                    <button class="image-grid__button-like">
-                        <div class="image-grid__heart" role="img" aria-label="Like image"></div>
-                    </button>
+            <div class="image-card">
+                <img class="image-card__image" src="Images/lago-di-braies.png" alt="lago di braies photo" />
+                <div class="image-card__text">
+                    <h2 class="image-card__title">Lago di Braies</h2>
+                    <button class="image-card__heart" role="img" aria-label="Like button" type="button"></button>
                 </div>
             </div>
 
@@ -122,7 +92,25 @@
         <p class="footer__copyright">© 2021 Around The U.S.</p>
     </footer>
 
-    <script src="./script.js"></script>
+
+    <div class="modal">
+        <div class="modal__container">
+            <button class="modal__close-icon" aria-label="close button"></button>
+            <form class="edit-box" name="details">
+                <h2 class="edit-box__title">Edit profile</h2>
+                <div class="edit-box__inputs">
+                    <input class="edit-box__input edit-box__input_type_title" type="text" placeholder="Name" required>
+                    <input class="edit-box__input edit-box__input_type_subtitle" type="text" placeholder="Description"
+                        required>
+                </div>
+                <button class="edit-box__button" type="submit" aria-label="save button">Save</button>
+            </form>
+        </div>
+    </div>
+
+
+
+    <script src="./scripts/script.js"></script>
 </body>
 
 </html>

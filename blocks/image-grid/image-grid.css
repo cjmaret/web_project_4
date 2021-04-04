@@ -1,18 +1,10 @@
-@import url("./__title/image-grid__title.css");
-@import url("./__text/image-grid__text.css");
-@import url("./__image/image-grid__image.css");
-@import url("./__card/image-grid__card.css");
-@import url("./__button-like/__button-like.css");
-@import url("./__heart/image-grid__heart.css");
-
-
 
 .image-grid {
     margin-top: 50px;
     margin-bottom: 68px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     row-gap: 20px;
     column-gap: 17px;
 }
@@ -22,7 +14,7 @@
         margin-right: auto;
         margin-left: auto;
         max-width: 645px;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 

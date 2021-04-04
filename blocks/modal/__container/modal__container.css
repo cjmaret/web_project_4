@@ -1,14 +1,11 @@
-.edit-profile__container {
+.modal__container {
     width: 530px;
-    margin: auto;
-    margin-top: 125px;
     display: flex;
     flex-direction: column;
 }
 
 @media only screen and (max-width: 550px) {
-    .edit-profile__container {
-        margin-top: 97px;
+    .modal__container {
         width: 282px;
     }
 }

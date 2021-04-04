@@ -1,4 +1,7 @@
-.image-grid__button-like {
+.image-card__heart {
+    width: 21px;
+    height: 19px;
+    background-image: url("../../../Images/heart.svg");
     background-color: transparent;
     border: none;
     padding: 0;
@@ -6,12 +9,12 @@
     transition: .4s ease;
 }
 
-.image-grid__button-like:hover {
+.image-card__heart:hover {
     opacity: .5;
     cursor: pointer;
 }
 
-.image-grid__button-like:focus {
+.image-card__heart:focus {
     outline: 0;
 }
 

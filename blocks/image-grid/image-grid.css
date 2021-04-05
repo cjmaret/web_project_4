@@ -26,7 +26,6 @@
 
 @media only screen and (max-width: 320px) {
     .image-grid {
-        grid-template-columns: 1fr;
         margin: 36px auto 50px auto;
     }
 }

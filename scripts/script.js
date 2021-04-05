@@ -57,6 +57,6 @@ let heart = document.querySelectorAll(".image-card__heart");
 
 for (let i = 0; i < heart.length; i++) {
     heart[i].addEventListener("click", function() {
-        heart[i].classList.toggle("image-card__heart_black-heart");
+        heart[i].classList.toggle("image-card__heart_liked");
     });
  }

@@ -2,7 +2,7 @@
 @import url("./__image/image-card__image.css");
 @import url("./__text/image-card__text.css");
 @import url("./__title/image-card__title.css");
-@import url("./__heart/_black-heart/image-card__heart_black-heart.css");
+@import url("./__heart/_liked/image-card__heart_liked.css");
 
 .image-card {
     width: 282px;

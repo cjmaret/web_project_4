@@ -18,6 +18,10 @@
     cursor: pointer;
 }
 
+.modal__close-icon:focus {
+    outline: none;
+}
+
 @media only screen and (max-width: 550px) {
     .modal__close-icon {
         width: 35px;

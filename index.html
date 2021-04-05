@@ -28,7 +28,7 @@
                     <p class="profile__subtitle">Explorer</p>
                 </div>
             </div>
-            <button class="profile__button-add" type="submit" aria-label="add button"></button>
+            <button class="profile__button-add" type="button" aria-label="add button"></button>
         </section>
 
 
@@ -95,13 +95,14 @@
 
     <div class="modal">
         <div class="modal__container">
-            <button class="modal__close-icon" aria-label="close button"></button>
+            <button class="modal__close-icon" type="button" aria-label="close button"></button>
             <form class="edit-box" name="details">
                 <h2 class="edit-box__title">Edit profile</h2>
                 <div class="edit-box__inputs">
-                    <input class="edit-box__input edit-box__input_type_title" type="text" placeholder="Name" required>
-                    <input class="edit-box__input edit-box__input_type_subtitle" type="text" placeholder="Description"
-                        required>
+                    <input class="edit-box__input edit-box__input_type_title" type="text" name="title"
+                        placeholder="Name" required>
+                    <input class="edit-box__input edit-box__input_type_subtitle" type="text" name="subtitle"
+                        placeholder="Description" required>
                 </div>
                 <button class="edit-box__button" type="submit" aria-label="save button">Save</button>
             </form>

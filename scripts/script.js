@@ -1,16 +1,26 @@
 // Open Pop Up //
 
+let title = document.querySelector(".profile__title");
+
+let subtitle = document.querySelector(".profile__subtitle");
+
+let inputName = document.querySelector(".edit-box__input_type_title");
+
+let inputDescription = document.querySelector(".edit-box__input_type_subtitle");
+
 let editButton = document.querySelector(".profile__button-edit");
 
 let popUp = document.querySelector(".modal");
 
+
 function displayPopUp() {
-    popUp.setAttribute("style", "display: flex");
+    inputName.value = title.textContent;
+    inputDescription.value = subtitle.textContent;
+
+    popUp.classList.add("modal_open");
 };
 
 editButton.addEventListener("click", displayPopUp);
-
-
 
 
 //Close Pop Up//
@@ -18,7 +28,7 @@ editButton.addEventListener("click", displayPopUp);
 let xButton = document.querySelector(".modal__close-icon");
 
 function closePopUp() {
-    popUp.removeAttribute("style", "display: block");
+    popUp.classList.remove("modal_open");
 }
 
 xButton.addEventListener("click", closePopUp);
@@ -26,37 +36,18 @@ xButton.addEventListener("click", closePopUp);
 
 // Set Name and Description //
 
+let saveForm = document.querySelector(".edit-box");
 
-let title = document.querySelector(".profile__title");
+function addInfo(evt) {
+    evt.preventDefault;
 
-let subtitle = document.querySelector(".profile__subtitle");
-
-let newName = document.querySelector(".edit-box__input_type_title");
-
-let newDescription = document.querySelector(".edit-box__input_type_subtitle");
-
-let saveButton = document.querySelector(".edit-box__button");
-
-function addInfo() {
-    title.textContent = `${newName.value}`;
-    subtitle.textContent = `${newDescription.value}`;
+    title.textContent = inputName.value;
+    subtitle.textContent = inputDescription.value;
 
     closePopUp();
 
-    newName.value = "";
-    newDescription.value = "";
 }
 
-saveButton.addEventListener("click", addInfo);
+saveForm.addEventListener("submit", addInfo);
 
 
-// Heart Black on Active // 
-
-let heart = document.querySelectorAll(".image-card__heart");
-
-
-for (let i = 0; i < heart.length; i++) {
-    heart[i].addEventListener("click", function() {
-        heart[i].classList.toggle("image-card__heart_liked");
-    });
- }

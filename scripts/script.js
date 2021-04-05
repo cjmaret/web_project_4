@@ -39,7 +39,7 @@ xButton.addEventListener("click", closePopUp);
 let saveForm = document.querySelector(".edit-box");
 
 function addInfo(evt) {
-    evt.preventDefault;
+    evt.preventDefault();
 
     title.textContent = inputName.value;
     subtitle.textContent = inputDescription.value;

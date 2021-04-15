@@ -75,8 +75,9 @@ initialCards.forEach(card => {
 
     // Opening Picture Popup //
 
-    const modalImageTemplate = document.querySelector("#modal-image-template").content;
-    const modalImageElement = modalImageTemplate.querySelector(".image-expand").cloneNode(true);
+
+    const modalImageElement = document.querySelector(".image-expand");
+
 
     initialCardElement.querySelector(".image-card__image").addEventListener("click", function () {
 
@@ -91,7 +92,7 @@ initialCards.forEach(card => {
     // Closing Picture Popup //
 
     modalImageElement.querySelector(".image-expand__close-icon").addEventListener("click", function () {
-        modalImageElement.remove();
+        modalImageElement.classList.remove("image-expand_open");
     });
 
 
@@ -216,8 +217,8 @@ function addImageCard(evt) {
 
     // Opening Picture Popup //
 
-    const modalImageTemplate = document.querySelector("#modal-image-template").content;
-    const modalImageElement = modalImageTemplate.querySelector(".image-expand").cloneNode(true);
+
+    const modalImageElement = document.querySelector(".image-expand");
 
     imageCardElement.querySelector(".image-card__image").addEventListener("click", function () {
 
@@ -225,7 +226,6 @@ function addImageCard(evt) {
         modalImageElement.querySelector(".image-expand__title").textContent = imageCardElement.querySelector(".image-card__title").textContent;
 
 
-        document.querySelector(".page").append(modalImageElement);
         modalImageElement.classList.add("image-expand_open");
 
     });
@@ -234,7 +234,7 @@ function addImageCard(evt) {
     // Closing Picture Popup //
 
     modalImageElement.querySelector(".image-expand__close-icon").addEventListener("click", function () {
-        modalImageElement.remove();
+        modalImageElement.classList.remove("image-expand_open");
     });
 
 

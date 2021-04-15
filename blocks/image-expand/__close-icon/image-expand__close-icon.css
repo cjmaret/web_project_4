@@ -4,8 +4,6 @@
     margin-left: auto;
     transition: .4s ease;
     z-index: 5;
-    position: relative;
-    top: 10px;
     background-image: url("../../../images/close-icon.svg");
     background-position: center;
     background-repeat: no-repeat;

@@ -15,6 +15,7 @@
 
 .image-card__trash:hover {
     opacity: 0.6;
+    cursor: pointer;
 }
 
 .image-card__trash:focus {

@@ -58,27 +58,39 @@ initialCards.forEach(card => {
 
     imageGrid.append(initialCardElement);
 
+
+    // Toggle Hearts //
+
     initialCardElement.querySelector(".image-card__heart").addEventListener("click", function (evt) {
         evt.target.classList.toggle("image-card__heart_liked");
     });
+
+    // Add Trash Can //
 
     initialCardElement.querySelector(".image-card__trash").addEventListener("click", function (evt) {
         evt.target.closest(".image-card").remove();
     });
 
 
-     // Opening Picture Popup //
+    // Opening Picture Popup //
 
-     const modalImageTemplate = document.querySelector("#modal-image-template").content;
-     const modalImageElement = modalImageTemplate.querySelector(".image-expand").cloneNode(true);
- 
-     document.querySelector(".image-card__image").addEventListener("click", function (evt) {
- 
-         modalImageElement.querySelector(".image-expand__image").src = evt.target.src;
-         modalImageElement.querySelector(".image-expand__title").textContent = evt.target.textContent;
- 
-         modalImageElement.classList.add("modal__open");
-     });
+    const modalImageTemplate = document.querySelector("#modal-image-template").content;
+    const modalImageElement = modalImageTemplate.querySelector(".image-expand").cloneNode(true);
+
+    initialCardElement.querySelector(".image-card__image").addEventListener("click", function () {
+
+        modalImageElement.querySelector(".image-expand__image").src = initialCardElement.querySelector(".image-card__image").src;
+        modalImageElement.querySelector(".image-expand__title").textContent = initialCardElement.querySelector(".image-card__title").textContent;
+
+        document.querySelector(".page").append(modalImageElement);
+    });
+
+
+    // Closing Picture Popup //
+
+    modalImageElement.querySelector(".image-expand__close-icon").addEventListener("click", function () {
+        modalImageElement.remove();
+    });
 
 
 
@@ -196,6 +208,27 @@ function addImageCard(evt) {
 
     imageCardElement.querySelector(".image-card__trash").addEventListener("click", function (evt) {
         evt.target.closest(".image-card").remove();
+    });
+
+
+    // Opening Picture Popup //
+
+    const modalImageTemplate = document.querySelector("#modal-image-template").content;
+    const modalImageElement = modalImageTemplate.querySelector(".image-expand").cloneNode(true);
+
+    imageCardElement.querySelector(".image-card__image").addEventListener("click", function () {
+
+        modalImageElement.querySelector(".image-expand__image").src = imageCardElement.querySelector(".image-card__image").src;
+        modalImageElement.querySelector(".image-expand__title").textContent = imageCardElement.querySelector(".image-card__title").textContent;
+
+        document.querySelector(".page").append(modalImageElement);
+    });
+
+
+    // Closing Picture Popup //
+
+    modalImageElement.querySelector(".image-expand__close-icon").addEventListener("click", function () {
+        modalImageElement.remove();
     });
 
 

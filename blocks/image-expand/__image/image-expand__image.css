@@ -1,6 +1,7 @@
 .image-expand__image {
-    object-fit: none;
+    object-fit: contain;
     object-position: center; 
     margin: auto;
-    border: 1px solid red;
+    max-width: 75vw;
+    max-height: 75vh;
 }

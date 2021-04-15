@@ -12,6 +12,9 @@
     background-color: transparent;
     background-size: contain;
     border: none;
+    position: absolute;
+    right: -50px;
+    top: -50px;
 }
 
 .image-expand__close-icon:hover {

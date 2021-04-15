@@ -1,0 +1,8 @@
+.image-expand__container {
+    display: flex;
+    flex-direction: column;
+    max-width: 75vw;
+    max-height: 75vh;
+    border: 1px solid yellow;
+    width: 500px;
+}

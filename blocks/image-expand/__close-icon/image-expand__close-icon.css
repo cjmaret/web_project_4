@@ -1,0 +1,40 @@
+.image-expand__close-icon {
+    width: 60px;
+    height: 60px;
+    margin-left: auto;
+    transition: .4s ease;
+    z-index: 5;
+    position: relative;
+    top: 10px;
+    background-image: url("../../../images/close-icon.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: contain;
+    border: none;
+}
+
+.image-expand__close-icon:hover {
+    opacity: .6;
+    cursor: pointer;
+}
+
+.image-expand__close-icon:focus {
+    outline: none;
+}
+
+@media only screen and (max-width: 550px) {
+    .image-expand__close-icon {
+        width: 35px;
+        height: 35px;
+        top: 0;
+        margin-bottom: 15px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .image-expand__close-icon {
+        width: 26px;
+        height: 26px;
+    }
+}

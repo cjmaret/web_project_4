@@ -30,8 +30,8 @@
     .image-expand__close-icon {
         width: 35px;
         height: 35px;
-        top: 0;
-        margin-bottom: 15px;
+        top: -30px;
+        right: -30px;
     }
 }
 

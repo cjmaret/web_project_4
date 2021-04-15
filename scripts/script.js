@@ -54,6 +54,7 @@ initialCards.forEach(card => {
 
     initialCardElement.querySelector(".image-card__image").src = card.link;
     initialCardElement.querySelector(".image-card__title").textContent = card.name;
+    initialCardElement.querySelector(".image-card__image").setAttribute("alt", card.name);
 
 
     imageGrid.append(initialCardElement);
@@ -82,7 +83,8 @@ initialCards.forEach(card => {
         modalImageElement.querySelector(".image-expand__image").src = initialCardElement.querySelector(".image-card__image").src;
         modalImageElement.querySelector(".image-expand__title").textContent = initialCardElement.querySelector(".image-card__title").textContent;
 
-        document.querySelector(".page").append(modalImageElement);
+        modalImageElement.classList.add("image-expand_open");
+
     });
 
 
@@ -191,6 +193,7 @@ function addImageCard(evt) {
 
     imageCardElement.querySelector(".image-card__image").src = inputImageLink.value;
     imageCardElement.querySelector(".image-card__title").textContent = inputImageTitle.value;
+    imageCardElement.querySelector(".image-card__image").setAttribute("alt", inputImageTitle.value);
 
     imageGrid.prepend(imageCardElement);
 
@@ -221,7 +224,10 @@ function addImageCard(evt) {
         modalImageElement.querySelector(".image-expand__image").src = imageCardElement.querySelector(".image-card__image").src;
         modalImageElement.querySelector(".image-expand__title").textContent = imageCardElement.querySelector(".image-card__title").textContent;
 
+
         document.querySelector(".page").append(modalImageElement);
+        modalImageElement.classList.add("image-expand_open");
+
     });
 
 
@@ -238,22 +244,3 @@ function addImageCard(evt) {
 saveImageForm.addEventListener("submit", addImageCard);
 
 
-
-
-
-
-
-
-
-
-
-    // // Remove Image Card // 
-
-    // const trashButton = document.querySelectorAll(".image-card__trash");
-
-    // trashButton.forEach(button => {
-    //     button.addEventListener("click", function () {
-    //         const imageCardToRemove = button.closest(".image-card");
-    //         imageCardToRemove.remove();
-    //     });
-    // });

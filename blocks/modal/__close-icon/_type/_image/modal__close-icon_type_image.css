@@ -1,10 +1,10 @@
-.image-expand__close-icon {
+.modal__close-icon_type_image {
     width: 60px;
     height: 60px;
     margin-left: auto;
     transition: .4s ease;
     z-index: 5;
-    background-image: url("../../../images/close-icon.svg");
+    background-image: url("../../../../../images/close-icon.svg");
     background-position: center;
     background-repeat: no-repeat;
     background-color: transparent;
@@ -15,12 +15,12 @@
     top: -50px;
 }
 
-.image-expand__close-icon:hover {
+.modal__close-icon_type_image:hover {
     opacity: .6;
     cursor: pointer;
 }
 
-.image-expand__close-icon:focus {
+.modal__close-icon_type_image:focus {
     outline: none;
 }
 
@@ -34,7 +34,7 @@
 }
 
 @media only screen and (max-width: 320px) {
-    .image-expand__close-icon {
+    .modal__close-icon_type_image {
         width: 26px;
         height: 26px;
     }

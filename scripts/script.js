@@ -1,20 +1,42 @@
-
-
-// Open Edit Pop Up //
-
 const title = document.querySelector(".profile__title");
 
 const subtitle = document.querySelector(".profile__subtitle");
 
-const inputName = document.querySelector(".edit-box__input_type_title");
-
-const inputDescription = document.querySelector(".edit-box__input_type_subtitle");
+const popUp = document.querySelector(".modal");
 
 const editButton = document.querySelector(".profile__button-edit");
 
 const editPopUp = document.querySelector(".modal_type_edit");
 
 const imageGrid = document.querySelector(".image-grid");
+
+const saveImageForm = document.querySelector(".edit-box_type_image");
+
+const modalImageElement = document.querySelector(".image-expand");
+
+const editCloseButton = document.querySelector(".modal__close-icon_type_edit");
+
+const saveProfileForm = document.querySelector(".edit-box_type_profile");
+
+const addPopUp = document.querySelector(".modal_type_add");
+
+const inputImageTitle = document.querySelector(".edit-box__input_type_image-title");
+
+const inputImageLink = document.querySelector(".edit-box__input_type_image-link");
+
+const addButton = document.querySelector(".profile__button-add");
+
+const addCloseButton = document.querySelector(".modal__close-icon_type_add");
+
+const imageCloseButton = modalImageElement.querySelector(".modal__close-icon_type_image");
+
+const inputTitle = document.querySelector(".edit-box__input_type_title");
+
+const inputDescription = document.querySelector(".edit-box__input_type_description");
+
+const modalImageImage = modalImageElement.querySelector(".image-expand__image");
+
+const modalImageTitle = modalImageElement.querySelector(".image-expand__title");
 
 
 
@@ -47,200 +69,139 @@ const initialCards = [
     }
 ];
 
-initialCards.forEach(card => {
 
-    const initialCardTemplate = document.querySelector("#image-card-template").content;
-    const initialCardElement = initialCardTemplate.querySelector(".image-card").cloneNode(true);
+// Opening Modal Popups // 
 
-    initialCardElement.querySelector(".image-card__image").src = card.link;
-    initialCardElement.querySelector(".image-card__title").textContent = card.name;
-    initialCardElement.querySelector(".image-card__image").setAttribute("alt", card.name);
-
-
-    imageGrid.append(initialCardElement);
-
-
-    // Toggle Hearts //
-
-    initialCardElement.querySelector(".image-card__heart").addEventListener("click", function (evt) {
-        evt.target.classList.toggle("image-card__heart_liked");
-    });
-
-    // Add Trash Can //
-
-    initialCardElement.querySelector(".image-card__trash").addEventListener("click", function (evt) {
-        evt.target.closest(".image-card").remove();
-    });
-
-
-    // Opening Picture Popup //
-
-
-    const modalImageElement = document.querySelector(".image-expand");
-
-
-    initialCardElement.querySelector(".image-card__image").addEventListener("click", function () {
-
-        modalImageElement.querySelector(".image-expand__image").src = initialCardElement.querySelector(".image-card__image").src;
-        modalImageElement.querySelector(".image-expand__title").textContent = initialCardElement.querySelector(".image-card__title").textContent;
-
-        modalImageElement.classList.add("image-expand_open");
-
-    });
-
-
-    // Closing Picture Popup //
-
-    modalImageElement.querySelector(".image-expand__close-icon").addEventListener("click", function () {
-        modalImageElement.classList.remove("image-expand_open");
-    });
-
-
-
-});
-
-
-
-
-
-
-// Open Edit Pop Up //
-
-function displayEditPopUp() {
-    inputName.value = title.textContent;
-    inputDescription.value = subtitle.textContent;
-
-    editPopUp.classList.add("modal_open");
+function openPopUp(popUpElement) {
+    popUpElement.classList.add("modal_open");
 };
 
-editButton.addEventListener("click", displayEditPopUp);
+// Opening Picture Popup //
+
+function openImage(cardElement) {
+
+    const imageCardImage = cardElement.querySelector(".image-card__image");
+    const imageCardText = cardElement.querySelector(".image-card__text");
+
+    imageCardImage.addEventListener("click", function () {
+        modalImageImage.src = imageCardImage.src;
+        modalImageTitle.textContent = imageCardText.textContent;
+        openPopUp(modalImageElement);
+    });
+};
 
 
-//Close Edit Pop Up//
+// Close Popups //
 
-const editCloseButton = document.querySelector(".modal__close-icon_type_edit");
-
-function closeEditPopUp() {
-    editPopUp.classList.remove("modal_open");
-}
-
-editCloseButton.addEventListener("click", closeEditPopUp);
-
+function closePopUp(popUpElement) {
+    popUpElement.classList.remove("modal_open");
+};
 
 
 // Set Profile Name and Description //
 
-const saveProfileForm = document.querySelector(".edit-box_type_profile");
-
 function addProfileInfo(evt) {
     evt.preventDefault();
 
-    title.textContent = inputName.value;
+    title.textContent = inputTitle.value;
     subtitle.textContent = inputDescription.value;
 
-    closeEditPopUp();
-
+    closePopUp(editPopUp);
 }
 
-saveProfileForm.addEventListener("submit", addProfileInfo);
+
+// Toggle Hearts //
+
+function toggleHearts(cardElement) {
+
+    const heartButton = cardElement.querySelector(".image-card__heart");
+
+    heartButton.addEventListener("click", function (evt) {
+        evt.target.classList.toggle("image-card__heart_liked");
+    })
+};
 
 
+// Remove Image Card // 
 
+function deleteImage(cardElement) {
 
-// open Add Popup //
+    const trashButton = cardElement.querySelector(".image-card__trash");
 
-const addPopUp = document.querySelector(".modal_type_add");
-const imageTitle = document.querySelector(".image-card__title");
-const imageLink = document.querySelector(".image-card__link");
-const inputImageTitle = document.querySelector(".edit-box__input_type_image-title");
-const inputImageLink = document.querySelector(".edit-box__input_type_image-link");
-const addButton = document.querySelector(".profile__button-add");
-
-function displayAddPopUp() {
-    inputImageTitle.value = "";
-    inputImageLink.value = "";
-
-    addPopUp.classList.add("modal_open");
-}
-
-addButton.addEventListener("click", displayAddPopUp);
-
-
-
-// close Add Popup //
-
-const addCloseButton = document.querySelector(".modal__close-icon_type_add");
-
-function closeAddPopUp() {
-    addPopUp.classList.remove("modal_open");
-}
-
-addCloseButton.addEventListener("click", closeAddPopUp);
-
-
+    trashButton.addEventListener("click", function (evt) {
+        evt.target.closest(".image-card").remove();
+    });
+};
 
 
 // Add Image Card // 
 
+function addImageCard(titleValue, urlValue) {
 
-const saveImageForm = document.querySelector(".edit-box_type_image");
+    const cardTemplate = document.querySelector("#image-card-template").content;
+
+    const cardElement = cardTemplate.querySelector(".image-card").cloneNode(true);
+
+    const cardImage = cardElement.querySelector(".image-card__image");
+
+    const cardTitle = cardElement.querySelector(".image-card__title");
+
+    cardTitle.textContent = titleValue;
+    cardImage.src = urlValue;
+    cardImage.setAttribute("alt", titleValue);
+
+    toggleHearts(cardElement);
+    deleteImage(cardElement);
+    openImage(cardElement);
+
+    return cardElement;
+};
 
 
-function addImageCard(evt) {
+
+// Event Listeners and Function Calls // 
+
+
+initialCards.forEach(item => {
+    const cardElement = addImageCard(item.name, item.link);
+    imageGrid.append(cardElement);
+});
+
+addButton.addEventListener("click", function (evt) {
     evt.preventDefault();
+    inputTitle.value = "";
+    inputDescription.value = "";
+    openPopUp(addPopUp);
+});
 
-    const imageCardTemplate = document.querySelector("#image-card-template").content;
-    const imageCardElement = imageCardTemplate.querySelector(".image-card").cloneNode(true);
-
-    imageCardElement.querySelector(".image-card__image").src = inputImageLink.value;
-    imageCardElement.querySelector(".image-card__title").textContent = inputImageTitle.value;
-    imageCardElement.querySelector(".image-card__image").setAttribute("alt", inputImageTitle.value);
-
-    imageGrid.prepend(imageCardElement);
-
-    closeAddPopUp();
-
-
-    // Change Heart Color //
-
-    imageCardElement.querySelector(".image-card__heart").addEventListener("click", function (evt) {
-        evt.target.classList.toggle("image-card__heart_liked");
-    });
+editButton.addEventListener("click", function (evt) {
+    evt.preventDefault();
+    inputTitle.value = title.textContent;
+    inputDescription.value = subtitle.textContent;
+    openPopUp(editPopUp);
+});
 
 
-    // Remove Image Card // 
+editCloseButton.addEventListener("click", function () {
+    closePopUp(editPopUp);
+});
 
-    imageCardElement.querySelector(".image-card__trash").addEventListener("click", function (evt) {
-        evt.target.closest(".image-card").remove();
-    });
+addCloseButton.addEventListener("click", function () {
+    closePopUp(addPopUp);
+});
 
-
-    // Opening Picture Popup //
-
-
-    const modalImageElement = document.querySelector(".image-expand");
-
-    imageCardElement.querySelector(".image-card__image").addEventListener("click", function () {
-
-        modalImageElement.querySelector(".image-expand__image").src = imageCardElement.querySelector(".image-card__image").src;
-        modalImageElement.querySelector(".image-expand__title").textContent = imageCardElement.querySelector(".image-card__title").textContent;
+imageCloseButton.addEventListener("click", function () {
+    closePopUp(modalImageElement);
+});
 
 
-        modalImageElement.classList.add("image-expand_open");
-
-    });
+saveProfileForm.addEventListener("submit", addProfileInfo);
 
 
-    // Closing Picture Popup //
-
-    modalImageElement.querySelector(".image-expand__close-icon").addEventListener("click", function () {
-        modalImageElement.classList.remove("image-expand_open");
-    });
-
-
-
-}
-
-saveImageForm.addEventListener("submit", addImageCard);
-
+saveImageForm.addEventListener("submit", function (evt) {
+    evt.preventDefault();
+    const cardElement = addImageCard(inputImageTitle.value, inputImageLink.value);
+    imageGrid.prepend(cardElement);
+    closePopUp(addPopUp);
+});
 

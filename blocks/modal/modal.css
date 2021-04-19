@@ -1,5 +1,6 @@
 @import url("./__close-icon/modal__close-icon.css");
 @import url("./__container/modal__container.css");
+@import url("./__close-icon/_type/_image/modal__close-icon_type_image.css");
 
 .modal {
     position: fixed;

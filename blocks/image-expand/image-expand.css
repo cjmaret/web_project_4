@@ -1,7 +1,6 @@
 @import url("./__container/image-expand__container.css");
 @import url("./__image/image-expand__image.css");
 @import url("./__title/image-expand__title.css");
-@import url("./__close-icon/image-expand__close-icon.css");
 @import url("./__info/image-expand__info.css");
 
 .image-expand {

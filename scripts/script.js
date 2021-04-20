@@ -169,8 +169,8 @@ initialCards.forEach(item => {
 
 addButton.addEventListener("click", function (evt) {
     evt.preventDefault();
-    inputTitle.value = "";
-    inputDescription.value = "";
+    inputImageTitle.value = "";
+    inputImageLink.value = "";
     openPopUp(addPopUp);
 });
 
@@ -180,7 +180,6 @@ editButton.addEventListener("click", function (evt) {
     inputDescription.value = subtitle.textContent;
     openPopUp(editPopUp);
 });
-
 
 editCloseButton.addEventListener("click", function () {
     closePopUp(editPopUp);

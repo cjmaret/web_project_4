@@ -181,18 +181,40 @@ editButton.addEventListener("click", function (evt) {
     openPopUp(editPopUp);
 });
 
+
+document.querySelector(".modal_type_edit").addEventListener("click", function (evt) {
+    closePopUp(evt.target);
+});
+
+
 editCloseButton.addEventListener("click", function () {
     closePopUp(editPopUp);
+});
+
+
+document.querySelector(".modal_type_add").addEventListener("click", function (evt) {
+    closePopUp(evt.target);
 });
 
 addCloseButton.addEventListener("click", function () {
     closePopUp(addPopUp);
 });
 
+
+document.addEventListener("keydown", function (evt) {
+    if (evt.key === "Escape") {
+        closePopUp(editPopUp);
+        closePopUp(addPopUp);
+    };
+});
+
 imageCloseButton.addEventListener("click", function () {
     closePopUp(modalImageElement);
 });
 
+document.querySelector(".image-expand").addEventListener("click", function (evt) {
+    closePopUp(evt.target);
+});
 
 saveProfileForm.addEventListener("submit", addProfileInfo);
 
@@ -203,4 +225,5 @@ saveImageForm.addEventListener("submit", function (evt) {
     imageGrid.prepend(cardElement);
     closePopUp(addPopUp);
 });
+
 

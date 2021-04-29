@@ -1,7 +1,7 @@
 .edit-box__input {
     width: 83.25%;
     height: 27.26px;
-    margin-bottom: 29.74px;
+    margin-bottom: 30px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, .2);
 }
@@ -15,4 +15,8 @@
 
 .edit-box__input:last-child {
     margin-bottom: 0;
+}
+
+.edit-box__input:focus {
+    outline: none;
 }

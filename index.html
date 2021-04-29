@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./pages/index.css">
+    <link rel="icon" href="./images/favicon-32x32.png" type="image" sizes="16x16">
     <title>Around the U.S. | Sprint 4</title>
 </head>
 
@@ -49,15 +50,24 @@
         <div class="modal__container">
             <button class="modal__close-icon modal__close-icon_type_edit" type="button"
                 aria-label="close button"></button>
-            <form class="edit-box edit-box_type_profile" name="details">
-                <h2 class="edit-box__title">Edit profile</h2>
-                <div class="edit-box__inputs">
-                    <input class="edit-box__input edit-box__input_type_title" type="text" name="title"
-                        placeholder="Name" required>
-                    <input class="edit-box__input edit-box__input_type_description" type="text" name="subtitle"
-                        placeholder="Description" required>
-                </div>
-                <button class="edit-box__button" type="submit" aria-label="save button">Save</button>
+            <form class="edit-box edit-box_type_profile" name="details" novalidate>
+                <fieldset class="edit-box__set">
+                    <h2 class="edit-box__title">Edit profile</h2>
+                    <div class="edit-box__inputs">
+                        <div class="edit-box__input-group">
+                            <input id="title-input" class="edit-box__input edit-box__input_type_title" type="text"
+                                name="title" placeholder="Name" minlength="2" maxlength="40" required>
+                            <span id="title-input-error" class="edit-box__input-error"></span>
+                        </div>
+                        <div class="edit-box__input-group">
+                            <input id="subtitle-input" class="edit-box__input edit-box__input_type_description"
+                                type="text" name="subtitle" placeholder="Description" minlength="2" maxlength="200"
+                                required>
+                            <span id="subtitle-input-error" class="edit-box__input-error"></span>
+                        </div>
+                    </div>
+                    <button class="edit-box__button" type="submit" aria-label="save button">Save</button>
+                </fieldset>
             </form>
         </div>
     </div>
@@ -67,30 +77,39 @@
         <div class="modal__container">
             <button class="modal__close-icon modal__close-icon_type_add" type="button"
                 aria-label="close button"></button>
-            <form class="edit-box edit-box_type_image" name="details">
-                <h2 class="edit-box__title">New place</h2>
-                <div class="edit-box__inputs">
-                    <input class="edit-box__input edit-box__input_type_image-title" type="text" name="title"
-                        placeholder="Title" required>
-                    <input class="edit-box__input edit-box__input_type_image-link" type="text" name="subtitle"
-                        placeholder="Image link" required>
-                </div>
-                <button class="edit-box__button" type="submit" aria-label="save button">Create</button>
+            <form class="edit-box edit-box_type_image" name="details" novalidate>
+                <fieldset class="edit-box__set">
+                    <h2 class="edit-box__title">New place</h2>
+                    <div class="edit-box__inputs">
+                        <div class="edit-box__input-group">
+                            <input id="image-title-input" class="edit-box__input edit-box__input_type_image-title"
+                                type="text" name="title" placeholder="Title" minlength="1" maxlength="30" required>
+                            <span id="image-title-input-error" class="edit-box__input-error"></span>
+                        </div>
+                        <div class="edit-box__input-group">
+                            <input id="image-link-input" class="edit-box__input edit-box__input_type_image-link"
+                                type="url" name="subtitle" placeholder="Image link" required>
+                            <span id="image-link-input-error" class="edit-box__input-error"></span>
+                        </div>
+                    </div>
+                    <button class="edit-box__button" type="submit" aria-label="save button">Create</button>
+                </fieldset>
             </form>
         </div>
     </div>
 
 
 
-        <div class="modal image-expand">
-            <div class="image-expand__container">
-                <button class="modal__close-icon modal__close-icon_type_image" type="button" aria-label="close button"></button>
-                <div class="image-expand__info">
-                    <img src="#" class="image-expand__image" alt="#" />
-                    <h2 class="image-expand__title">Latemar</h2>
-                </div>
+    <div class="modal image-expand">
+        <div class="image-expand__container">
+            <button class="modal__close-icon modal__close-icon_type_image" type="button"
+                aria-label="close button"></button>
+            <div class="image-expand__info">
+                <img src="#" class="image-expand__image" alt="#" />
+                <h2 class="image-expand__title">Latemar</h2>
             </div>
         </div>
+    </div>
 
 
 
@@ -109,6 +128,7 @@
 
 
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/validate.js"></script>
 </body>
 
 </html>

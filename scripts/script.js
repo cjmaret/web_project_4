@@ -38,6 +38,8 @@ const modalImageImage = modalImageElement.querySelector(".image-expand__image");
 
 const modalImageTitle = modalImageElement.querySelector(".image-expand__title");
 
+const editSaveButton = document.querySelector(".edit-box__button");
+
 
 
 // Initial Load of 6 Image Cards // 
@@ -178,6 +180,8 @@ editButton.addEventListener("click", function (evt) {
     evt.preventDefault();
     inputTitle.value = title.textContent;
     inputDescription.value = subtitle.textContent;
+    editSaveButton.disabled = false;
+    editSaveButton.classList.remove("edit-box__button_inactive");
     openPopUp(editPopUp);
 });
 

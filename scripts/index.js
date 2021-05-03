@@ -2,7 +2,7 @@ const title = document.querySelector(".profile__title");
 
 const subtitle = document.querySelector(".profile__subtitle");
 
-const popUp = document.querySelector(".modal");
+const popUp = document.querySelectorAll(".modal");
 
 const editButton = document.querySelector(".profile__button-edit");
 
@@ -40,6 +40,8 @@ const modalImageTitle = modalImageElement.querySelector(".image-expand__title");
 
 const editSaveButton = document.querySelector(".edit-box__button");
 
+const createSaveButton = document.querySelector(".edit-box__button_add");
+
 
 
 // Initial Load of 6 Image Cards // 
@@ -76,6 +78,7 @@ const initialCards = [
 
 function openPopUp(popUpElement) {
     popUpElement.classList.add("modal_open");
+    document.addEventListener("keydown", addEscKey);
 };
 
 // Opening Picture Popup //
@@ -97,6 +100,7 @@ function openImage(cardElement) {
 
 function closePopUp(popUpElement) {
     popUpElement.classList.remove("modal_open");
+    document.removeEventListener("keydown", addEscKey);
 };
 
 
@@ -160,6 +164,16 @@ function addImageCard(titleValue, urlValue) {
 };
 
 
+function addEscKey(evt) {
+    if (evt.key === "Escape") {
+        const openedPopup = document.querySelectorAll(".modal");
+        openedPopup.forEach(popup => {
+            closePopUp(popup);
+        })
+        
+    };
+};
+
 
 // Event Listeners and Function Calls // 
 
@@ -173,6 +187,8 @@ addButton.addEventListener("click", function (evt) {
     evt.preventDefault();
     inputImageTitle.value = "";
     inputImageLink.value = "";
+    createSaveButton.disabled = true;
+    createSaveButton.classList.add("edit-box__button_inactive");
     openPopUp(addPopUp);
 });
 
@@ -186,38 +202,15 @@ editButton.addEventListener("click", function (evt) {
 });
 
 
-document.querySelector(".modal_type_edit").addEventListener("click", function (evt) {
-    closePopUp(evt.target);
-});
-
-
-editCloseButton.addEventListener("click", function () {
-    closePopUp(editPopUp);
-});
-
-
-document.querySelector(".modal_type_add").addEventListener("click", function (evt) {
-    closePopUp(evt.target);
-});
-
-addCloseButton.addEventListener("click", function () {
-    closePopUp(addPopUp);
-});
-
-
-document.addEventListener("keydown", function (evt) {
-    if (evt.key === "Escape") {
-        closePopUp(editPopUp);
-        closePopUp(addPopUp);
-    };
-});
-
-imageCloseButton.addEventListener("click", function () {
-    closePopUp(modalImageElement);
-});
-
-document.querySelector(".image-expand").addEventListener("click", function (evt) {
-    closePopUp(evt.target);
+popUp.forEach((popup) => {
+    popup.addEventListener('click', (evt) => {
+        if (evt.target.classList.contains('modal_open')) {
+            closePopUp(popup)
+        }
+        if (evt.target.classList.contains('modal__close-icon')) {
+          closePopUp(popup)
+        }
+    })
 });
 
 saveProfileForm.addEventListener("submit", addProfileInfo);

@@ -1,7 +1,6 @@
 // Validation Functions //
 
 const showInputError = (formElement, inputElement, errorMessage) => {
-    console.log(formElement.querySelector(`#${inputElement.id}`));
     const errorElement = formElement.querySelector(`#${inputElement.id}-error`);
     inputElement.classList.add(settings.inputErrorClass);
     errorElement.textContent = errorMessage;

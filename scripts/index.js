@@ -166,11 +166,8 @@ function addImageCard(titleValue, urlValue) {
 
 function addEscKey(evt) {
     if (evt.key === "Escape") {
-        const openedPopup = document.querySelectorAll(".modal");
-        openedPopup.forEach(popup => {
-            closePopUp(popup);
-        })
-        
+        const openedPopup = document.querySelector(".modal_open");
+        closePopUp(openedPopup);
     };
 };
 

@@ -21,34 +21,34 @@ class Card {
 
     // Toggle Hearts //
 
-    _toggleHearts(cardElement) {
+    _toggleHearts() {
 
-        const heartButton = cardElement.querySelector(".image-card__heart");
+        const heartButton = this._element.querySelector(".image-card__heart");
 
         heartButton.classList.toggle("image-card__heart_liked");
     };
 
     // Remove Image Card // 
 
-    _deleteImage(cardElement) {
+    _deleteImage() {
 
-        const trashButton = cardElement.querySelector(".image-card__trash");
+        const trashButton = this._element.querySelector(".image-card__trash");
 
         trashButton.closest(".image-card").remove();
     };
 
     // Open Image Popup //
 
-    _openImage(cardElement) {
+    _openImage() {
 
-        const imageCardImage = cardElement.querySelector(".image-card__image");
-        const imageCardText = cardElement.querySelector(".image-card__text");
+        
         const modalImageElement = document.querySelector(".image-expand");
         const modalImageImage = modalImageElement.querySelector(".image-expand__image");
         const modalImageTitle = modalImageElement.querySelector(".image-expand__title");
 
-        modalImageImage.src = imageCardImage.src;
-        modalImageTitle.textContent = imageCardText.textContent;
+        modalImageImage.src = this._link;
+        modalImageTitle.textContent = this._name;
+        modalImageImage.setAttribute("alt", this._name);
         openPopUp(modalImageElement);
 
     };
@@ -56,13 +56,13 @@ class Card {
 
     _setEventListeners() {
         this._element.querySelector('.image-card__heart')
-            .addEventListener('click', () => this._toggleHearts(this._element));
+            .addEventListener('click', () => this._toggleHearts());
 
         this._element.querySelector('.image-card__trash')
-            .addEventListener('click', () => this._deleteImage(this._element));
+            .addEventListener('click', () => this._deleteImage());
 
         this._element.querySelector('.image-card__image')
-            .addEventListener('click', () => this._openImage(this._element));
+            .addEventListener('click', () => this._openImage());
     }
 
 

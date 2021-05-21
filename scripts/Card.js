@@ -70,9 +70,11 @@ class Card {
         this._element = this._getTemplate();
         this._setEventListeners();
 
+        const imageCardImage = this._element.querySelector(".image-card__image")
+
         this._element.querySelector(".image-card__title").textContent = this._name;
-        this._element.querySelector(".image-card__image").src = this._link;
-        this._element.querySelector(".image-card__image").setAttribute("alt", this._name);
+        imageCardImage.src = this._link;
+        imageCardImage.setAttribute("alt", this._name);
 
 
         return this._element;

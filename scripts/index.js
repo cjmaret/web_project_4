@@ -1,6 +1,8 @@
 import Card from "./Card.js";
 
-import {settings, FormValidator} from "./FormValidator.js";
+import { settings, FormValidator } from "./FormValidator.js";
+
+import Section from "./Section.js";
 
 
 const profileModalValidator = new FormValidator(settings, ".edit-box_type_profile");
@@ -119,14 +121,43 @@ function addProfileInfo(evt) {
 
 // Event Listeners and Function Calls // 
 
+const cardsList = new Section({
+    items: initialCards,
+    renderer: (item) => {
+        const card = new Card(item, "#image-card-template");
+        const cardElement = card.generateCard();
+        cardsList.addItem(cardElement);
+    }
+},
+    ".image-grid"
+);
 
-initialCards.forEach(data => {
-    const card = new Card(data, "#image-card-template");
+cardsList.renderer();
+
+
+
+
+
+// initialCards.forEach(data => {
+//     const card = new Card(data, "#image-card-template");
+
+//     const cardElement = card.generateCard();
+
+//     imageGrid.append(cardElement);
+// });
+
+
+
+saveImageForm.addEventListener("submit", function (evt) {
+    evt.preventDefault();
+    const card = new Card({ name: inputImageTitle.value, link: inputImageLink.value }, "#image-card-template");
 
     const cardElement = card.generateCard();
 
-    imageGrid.append(cardElement);
+    imageGrid.prepend(cardElement);
+    closePopUp(addPopUp);
 });
+
 
 
 
@@ -165,15 +196,7 @@ saveProfileForm.addEventListener("submit", addProfileInfo);
 
 
 
-saveImageForm.addEventListener("submit", function (evt) {
-    evt.preventDefault();
-    const card = new Card({ name: inputImageTitle.value, link: inputImageLink.value }, "#image-card-template");
-
-    const cardElement = card.generateCard();
-
-    imageGrid.prepend(cardElement);
-    closePopUp(addPopUp);
-});
 
 
-export {openPopUp};
+
+export { openPopUp };

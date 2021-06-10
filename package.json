@@ -1,0 +1,24 @@
+{
+  "name": "web_project_4",
+  "version": "1.0.0",
+  "description": "Practicum project 4",
+  "main": "./src/index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cjmaret/web_project_4.git"
+  },
+  "author": "Colin Maretsky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cjmaret/web_project_4/issues"
+  },
+  "homepage": "https://github.com/cjmaret/web_project_4#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2"
+  }
+}

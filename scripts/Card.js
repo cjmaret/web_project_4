@@ -1,11 +1,14 @@
-import {openPopUp} from "./index.js";
 
 
-class Card {
-    constructor(data, template) {
+import PopupWithImage from "./PopupWithImage.js";
+
+
+export default class Card {
+    constructor({data, handleCardClick}, template) {
         this._name = data.name;
         this._link = data.link;
         this._template = template;
+        this._handleCardClick = handleCardClick;
     }
 
     _getTemplate() {
@@ -37,22 +40,6 @@ class Card {
         trashButton.closest(".image-card").remove();
     };
 
-    // Open Image Popup //
-
-    _openImage() {
-
-        
-        const modalImageElement = document.querySelector(".image-expand");
-        const modalImageImage = modalImageElement.querySelector(".image-expand__image");
-        const modalImageTitle = modalImageElement.querySelector(".image-expand__title");
-
-        modalImageImage.src = this._link;
-        modalImageTitle.textContent = this._name;
-        modalImageImage.setAttribute("alt", this._name);
-        openPopUp(modalImageElement);
-
-    };
-
 
     _setEventListeners() {
         this._element.querySelector('.image-card__heart')
@@ -62,7 +49,10 @@ class Card {
             .addEventListener('click', () => this._deleteImage());
 
         this._element.querySelector('.image-card__image')
-            .addEventListener('click', () => this._openImage());
+            .addEventListener('click', () => this._handleCardClick({
+                name: this._name,
+                link: this._link,
+            }));
     }
 
 
@@ -70,7 +60,7 @@ class Card {
         this._element = this._getTemplate();
         this._setEventListeners();
 
-        const imageCardImage = this._element.querySelector(".image-card__image")
+        const imageCardImage = this._element.querySelector(".image-card__image");
 
         this._element.querySelector(".image-card__title").textContent = this._name;
         imageCardImage.src = this._link;
@@ -81,5 +71,3 @@ class Card {
     }
 
 }
-
-export default Card;

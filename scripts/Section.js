@@ -1,3 +1,4 @@
+
 export default class Section {
     constructor({ items, renderer }, containerSelector) {
         this._renderedItems = items;
@@ -10,7 +11,11 @@ export default class Section {
     }
 
     addItem(element) {
+<<<<<<< HEAD
 <<<<<<< Updated upstream
+=======
+
+>>>>>>> feat/popup-class-and-refactor-index-popups
         this._container.append(element);
 =======
         if (element === "newCardElement") {

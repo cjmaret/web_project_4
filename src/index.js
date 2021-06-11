@@ -18,7 +18,8 @@ profileModalValidator.enableValidation();
 
 imageModalValidator.enableValidation();
 
-
+console.log("hi");
+console.log("bye");
 
 
 const profileTitle = document.querySelector(".profile__title");

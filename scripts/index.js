@@ -132,8 +132,6 @@ openEditFormButton.addEventListener('click', () => {
 
 
 
-console.log(newUser.getUserInfo());
-
 const addCardPopup = new PopupWithForm({
     popupSelector: '.modal_type_add',
     handleFormSubmit: (data) => {

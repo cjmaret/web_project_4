@@ -11,11 +11,6 @@ export default class Section {
     }
 
     addItem(element) {
-        if (element === "newCardElement") {
             this._container.prepend(element);
-        } else {
-            this._container.append(element);
-        }
     }
-
 }

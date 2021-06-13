@@ -50,23 +50,21 @@
             <button class="modal__close-icon modal__close-icon_type_edit" type="button"
                 aria-label="close button"></button>
             <form class="edit-box edit-box_type_profile" name="details" novalidate>
-                <fieldset class="edit-box__set">
-                    <h2 class="edit-box__title">Edit profile</h2>
-                    <div class="edit-box__inputs">
-                        <div class="edit-box__input-group">
-                            <input id="title-input" class="edit-box__input edit-box__input_type_title" type="text"
-                                name="username" placeholder="Name" minlength="2" maxlength="40" required>
-                            <span id="title-input-error" class="edit-box__input-error"></span>
-                        </div>
-                        <div class="edit-box__input-group">
-                            <input id="subtitle-input" class="edit-box__input edit-box__input_type_description"
-                                type="text" name="userdescription" placeholder="Description" minlength="2" maxlength="200"
-                                required>
-                            <span id="subtitle-input-error" class="edit-box__input-error"></span>
-                        </div>
+                <h2 class="edit-box__title">Edit profile</h2>
+                <div class="edit-box__inputs">
+                    <div class="edit-box__input-group">
+                        <input id="title-input" class="edit-box__input edit-box__input_type_title" type="text"
+                            name="username" placeholder="Name" minlength="2" maxlength="40" required>
+                        <span id="title-input-error" class="edit-box__input-error"></span>
                     </div>
-                    <button class="edit-box__button edit-box__button_edit" type="submit" aria-label="save button">Save</button>
-                </fieldset>
+                    <div class="edit-box__input-group">
+                        <input id="subtitle-input" class="edit-box__input edit-box__input_type_description" type="text"
+                            name="userdescription" placeholder="Description" minlength="2" maxlength="200" required>
+                        <span id="subtitle-input-error" class="edit-box__input-error"></span>
+                    </div>
+                </div>
+                <button class="edit-box__button edit-box__button_edit" type="submit"
+                    aria-label="save button">Save</button>
             </form>
         </div>
     </div>
@@ -77,22 +75,21 @@
             <button class="modal__close-icon modal__close-icon_type_add" type="button"
                 aria-label="close button"></button>
             <form class="edit-box edit-box_type_image" name="details" novalidate>
-                <fieldset class="edit-box__set">
-                    <h2 class="edit-box__title">New place</h2>
-                    <div class="edit-box__inputs">
-                        <div class="edit-box__input-group">
-                            <input id="image-title-input" class="edit-box__input edit-box__input_type_image-title"
-                                type="text" name="name" placeholder="Title" minlength="1" maxlength="30" required>
-                            <span id="image-title-input-error" class="edit-box__input-error"></span>
-                        </div>
-                        <div class="edit-box__input-group">
-                            <input id="image-link-input" class="edit-box__input edit-box__input_type_image-link"
-                                type="url" name="link" placeholder="Image link" required>
-                            <span id="image-link-input-error" class="edit-box__input-error"></span>
-                        </div>
+                <h2 class="edit-box__title">New place</h2>
+                <div class="edit-box__inputs">
+                    <div class="edit-box__input-group">
+                        <input id="image-title-input" class="edit-box__input edit-box__input_type_image-title"
+                            type="text" name="name" placeholder="Title" minlength="1" maxlength="30" required>
+                        <span id="image-title-input-error" class="edit-box__input-error"></span>
                     </div>
-                    <button class="edit-box__button edit-box__button_add" type="submit" aria-label="save button">Create</button>
-                </fieldset>
+                    <div class="edit-box__input-group">
+                        <input id="image-link-input" class="edit-box__input edit-box__input_type_image-link" type="url"
+                            name="link" placeholder="Image link" required>
+                        <span id="image-link-input-error" class="edit-box__input-error"></span>
+                    </div>
+                </div>
+                <button class="edit-box__button edit-box__button_add" type="submit"
+                    aria-label="save button">Create</button>
             </form>
         </div>
     </div>

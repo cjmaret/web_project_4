@@ -10,6 +10,12 @@ export const inputTitle = document.querySelector(".edit-box__input_type_title");
 
 export const inputDescription = document.querySelector(".edit-box__input_type_description");
 
+export const formProfile = document.querySelector(".edit-box_type_profile");
+
+export const formImage = document.querySelector(".edit-box_type_image");
+
+export const imageCardTemplate = "#image-card-template";
+
 export const initialCards = [
     {
         name: "Yosemite Valley",

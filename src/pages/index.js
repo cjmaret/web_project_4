@@ -5,6 +5,7 @@ import Section from "../components/Section.js";
 import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
+import createCard from "../utils/utils.js";
 import { profileTitle, profileDescription, openEditFormButton, openAddFormButton, inputTitle, inputDescription, initialCards, settings, formProfile, formImage, imageCardTemplate } from "../utils/constants.js";
 
 
@@ -18,16 +19,6 @@ profileModalValidator.enableValidation();
 imageModalValidator.enableValidation();
 
 
-function createCard(data) {
-    const card = new Card({
-        data,
-        handleCardClick: ({link, name}) => {
-            imagePopup.open({link, name});
-        }
-    }, imageCardTemplate);
-    return card.generateCard();
-}
-
 const cardsList = new Section({
     items: initialCards,
     renderer: (data) => {
@@ -39,7 +30,7 @@ const cardsList = new Section({
 cardsList.renderer();
 
 
-const imagePopup = new PopupWithImage(".image-expand");
+export const imagePopup = new PopupWithImage(".image-expand");
 imagePopup.setEventListeners();
 
 

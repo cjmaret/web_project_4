@@ -1,3 +1,5 @@
+import { renderLoading } from "../utils/utils";
+
 export default class Api {
     constructor({ baseUrl, headers }) {
         this._baseUrl = baseUrl;
@@ -90,7 +92,10 @@ export default class Api {
                     return Promise.reject(`Error: ${res.status}`);
                 }
             })
-            .catch((err) => console.log(err));
+            .catch((err) => console.log(err))
+            .finally(() => {
+                renderLoading(false);
+            });
     }
 
     setUserAvatar(avatar) {

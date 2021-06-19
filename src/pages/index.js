@@ -6,7 +6,7 @@ import PopupWithImage from "../components/PopupWithImage.js";
 import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 import Api from "../components/Api.js";
-import createCard from "../utils/utils.js";
+import {createCard} from "../utils/utils.js";
 import { profileTitle, profileDescription, profileImage, openEditFormButton, openAddFormButton, inputTitle, inputDescription, initialCards, settings, formProfile, formImage, imageCardTemplate, profileImageOverlay, formProfileImage } from "../utils/constants.js";
 import PopupDeleteImage from "../components/PopupDeleteImage";
 

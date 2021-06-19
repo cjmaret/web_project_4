@@ -1,3 +1,4 @@
+import { renderLoading } from "../utils/utils";
 import Popup from "./Popup";
 
 export default class PopupDeleteImage extends Popup {
@@ -14,6 +15,7 @@ export default class PopupDeleteImage extends Popup {
         super.setEventListeners();
         this._formElement.addEventListener('submit', (evt) => {
             evt.preventDefault();
+            renderLoading(true);
             this._handleFormSubmit(this._id);
             this.close();
         })

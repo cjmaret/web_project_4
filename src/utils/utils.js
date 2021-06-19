@@ -4,7 +4,7 @@ import { imagePopup } from "../pages/index.js";
 import {deleteCardPopup} from "../pages/index.js";
 
 
-export default function createCard(data) {
+export function createCard(data) {
     const card = new Card({
         data,
         handleCardClick: ({link, name}) => {
@@ -18,10 +18,10 @@ export default function createCard(data) {
 }
 
 
-export default function renderLoading(isLoading) {
+export function renderLoading(isLoading) {
     if (isLoading) {
         submitButton.textContent = "Saving...";
     } else {
-        submitButton.textContent = submitButton.defaultValue;
+        submitButton.textContent = submitButton.dataset.textcontent;
     }
 }

@@ -14,18 +14,23 @@
         <img class="logo" src="<%=require('./images/logo.svg')%>" alt="logo" />
     </header>
 
+    <!-- <%=require('./images/jacques-cousteau.jpg')%> -->
 
     <main class="main">
 
         <section class="profile">
             <div class="profile__details">
-                <img class="profile__image" src="<%=require('./images/jacques-cousteau.jpg')%>" alt="profile photo" />
+                <div class="profile__image-group">
+                    <button class="profile__image-overlay" type="button"
+                        aria-label="profile image edit button"></button>
+                    <img class="profile__image" src="" alt="profile photo" />
+                </div>
                 <div class="profile__info">
                     <div class="profile__line-top">
-                        <h1 class="profile__title">Jacques Cousteau</h1>
+                        <h1 class="profile__title"></h1>
                         <button class="profile__button-edit" type="button" aria-label="edit button"></button>
                     </div>
-                    <p class="profile__subtitle">Explorer</p>
+                    <p class="profile__subtitle"></p>
                 </div>
             </div>
             <button class="profile__button-add" type="button" aria-label="add button"></button>
@@ -90,6 +95,37 @@
                 </div>
                 <button class="edit-box__button edit-box__button_add" type="submit"
                     aria-label="save button">Create</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal modal_type_profile-image">
+        <div class="modal__container">
+            <button class="modal__close-icon modal__close-icon_type_edit" type="button"
+                aria-label="close button"></button>
+            <form class="edit-box edit-box_type_profile-image" name="details" novalidate>
+                <h2 class="edit-box__title">Change profile picture</h2>
+                <div class="edit-box__inputs">
+                    <div class="edit-box__input-group">
+                        <input id="title-input" class="edit-box__input edit-box__input_type_image-link" type="url"
+                            name="profileimage" placeholder="Image Link" required>
+                        <span id="title-input-error" class="edit-box__input-error"></span>
+                    </div>
+                </div>
+                <button class="edit-box__button edit-box__button_profile-image" type="submit"
+                    aria-label="save button">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal modal_type_delete-card">
+        <div class="modal__container">
+            <button class="modal__close-icon modal__close-icon_type_edit" type="button"
+                aria-label="close button"></button>
+            <form class="edit-box edit-box_type_profile" name="details" novalidate>
+                <h2 class="edit-box__title">Are you sure?</h2>
+                <button class="edit-box__button edit-box__button_delete-card" type="submit"
+                    aria-label="save button">Yes</button>
             </form>
         </div>
     </div>

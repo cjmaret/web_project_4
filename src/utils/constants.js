@@ -2,6 +2,8 @@ export const profileTitle = document.querySelector(".profile__title");
 
 export const profileDescription = document.querySelector(".profile__subtitle");
 
+export const profileImage = document.querySelector(".profile__image");
+
 export const openEditFormButton = document.querySelector(".profile__button-edit");
 
 export const openAddFormButton = document.querySelector(".profile__button-add");
@@ -14,7 +16,13 @@ export const formProfile = document.querySelector(".edit-box_type_profile");
 
 export const formImage = document.querySelector(".edit-box_type_image");
 
+export const formProfileImage = document.querySelector(".edit-box_type_profile-image");
+
 export const imageCardTemplate = "#image-card-template";
+
+export const profileImageOverlay = document.querySelector(".profile__image-overlay");
+
+export const submitButton = document.querySelector(".edit-box__button");
 
 export const initialCards = [
     {

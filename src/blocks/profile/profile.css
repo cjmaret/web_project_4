@@ -6,6 +6,9 @@
 @import url("./__line-top/profile__line-top.css");
 @import url("./__subtitle/profile__subtitle.css");
 @import url("./__title/profile__title.css");
+@import url("./__image-group/profile__image-group.css");
+@import url("./__image-overlay/profile__image-overlay.css");
+
 
 
 .profile {

@@ -1,10 +1,14 @@
+import { api } from "../pages/index.js";
+import {deleteCardPopup} from "../pages/index.js";
 
 export default class Card {
-    constructor({data, handleCardClick}, template) {
+    constructor({data, handleCardClick, handleDeleteClick}, template) {
         this._name = data.name;
         this._link = data.link;
         this._template = template;
+        this._id = data._id;
         this._handleCardClick = handleCardClick;
+        this._handleDeleteClick = handleDeleteClick;
     }
 
     _getTemplate() {
@@ -21,20 +25,27 @@ export default class Card {
     // Toggle Hearts //
 
     _toggleHearts() {
-
         const heartButton = this._element.querySelector(".image-card__heart");
 
-        heartButton.classList.toggle("image-card__heart_liked");
+        heartButton.isLiked = false;
+        heartButton.isLiked = !heartButton.isLiked;
+
+        if (heartButton.isLiked) {
+            heartButton.classList.add("image-card__heart_liked");
+            api.addLike(this._id);
+        } else {
+            heartButton.classList.remove("image-card__heart_liked");
+            api.removeLike(this._id);
+        }
     };
 
     // Remove Image Card // 
 
-    _deleteImage() {
-
-        const trashButton = this._element.querySelector(".image-card__trash");
-
-        trashButton.closest(".image-card").remove();
-    };
+    // deleteImage() {
+    //     const trashButton = this._element.querySelector(".image-card__trash");
+    //     trashButton.closest(".image-card").remove();
+    //     this._handleDeleteClick(this._id);
+    // };
 
 
     _setEventListeners() {
@@ -42,8 +53,10 @@ export default class Card {
             .addEventListener('click', () => this._toggleHearts());
 
         this._element.querySelector('.image-card__trash')
-            .addEventListener('click', () => this._deleteImage());
-
+            .addEventListener('click', () => {
+                this._handleDeleteClick();
+                this.deleteImage();
+            });
         this._element.querySelector('.image-card__image')
             .addEventListener('click', () => this._handleCardClick({
                 name: this._name,

@@ -41,6 +41,9 @@ export default class Card {
 
         heartButton.classList.remove("image-card__heart_liked");
         heartNumber.textContent = (this._cardLikes -= 1);
+        if (heartNumber.textContent = "0") {
+            heartNumber.textContent = "";
+        }
     };
 
     // Remove Image Card // 
@@ -96,7 +99,12 @@ export default class Card {
         this._element.querySelector(".image-card__title").textContent = this._name;
         imageCardImage.src = this._link;
         imageCardImage.setAttribute("alt", this._name);
-        this._element.querySelector(".image-card__heart-number").textContent = this._cardLikes;
+
+        if (this._cardLikes > 0) {
+            this._element.querySelector(".image-card__heart-number").textContent = this._cardLikes;
+        } else {
+            this._element.querySelector(".image-card__heart-number").textContent = "";
+        }
 
         if (this._likesArray.some(like => {
             return like._id === this._user

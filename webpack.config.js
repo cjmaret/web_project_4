@@ -3,10 +3,13 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+
 module.exports = {
   devtool: 'inline-source-map',
   entry: {
-    main: './src/pages/index.js'
+    main: './src/pages/index.js',
+    index: ['babel-polyfill', './index.js', 'node_modules/regenerator-runtime/runtime.js']
+    
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -31,7 +34,21 @@ module.exports = {
         // all files must be processed by babel-loader
         loader: "babel-loader",
         // exclude the node_modules folder, we don't need to process files in it
-        exclude: "/node_modules/"
+        exclude: "/node_modules/",
+        options: {
+          sourceType: 'unambiguous',
+          presets: [
+            ['babel/preset-env', {
+              corejs: 3,
+              debug: true,
+              targets: {
+                browsers: ['IE 11'],
+                "chrome": "91",
+              },
+              useBuiltIns: 'usage',
+            }],
+          ],
+        },
       },
       {
         test: /\.css$/,

@@ -51,7 +51,7 @@ module.exports = {
         test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
         type: "asset/resource"
       },
-    ]
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -60,4 +60,4 @@ module.exports = {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin() // connect the plugin for merging CSS files
   ]
-} 
+}

@@ -1,22 +1,22 @@
-import { renderLoading } from "../utils/utils";
-import Popup from "./Popup";
+import { renderLoading } from "../utils/utils.js";
+import Popup from "./Popup.js";
 
 export default class PopupDeleteImage extends Popup {
-    constructor(popupSelector, data, handleFormSubmit) {
+    constructor({popupSelector, handleFormSubmit}) {
         super(popupSelector);
-        this._id = data._id; 
-        this._handleFormSubmit = handleFormSubmit;
-        this._formElement = this._popupElement.querySelector(".edit-box");   
+        this._handleFormSubmit = handleFormSubmit;   
     }
     
-
+    setSubmitAction (action) {
+        this._handleFormSubmit = action;
+    }
 
     setEventListeners() {
         super.setEventListeners();
-        this._formElement.addEventListener('submit', (evt) => {
+        this._popupElement.addEventListener('click', (evt) => {
             evt.preventDefault();
             renderLoading(true);
-            this._handleFormSubmit(this._id);
+            this._handleFormSubmit();
             this.close();
         })
     }

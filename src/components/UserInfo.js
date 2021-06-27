@@ -1,11 +1,10 @@
-import { data } from "autoprefixer";
-import { api } from "../pages/index.js";
 
 export default class UserInfo {
-    constructor({ userName, userDescription, userId }) {
+    constructor({ userName, userDescription, userAvatar, userId }) {
         this._userNameElement = userName;
         this._userDescriptionElement = userDescription;
         this._userId = userId;
+        this._userAvatar = userAvatar;
     }
 
     getUserInfo() {
@@ -21,9 +20,10 @@ export default class UserInfo {
         this._userDescriptionElement.textContent = userdescription;
     }
 
-    // getUserId() {
-    //      api.getUserInfo().then(res => {return res._id});
-    // }
+    setUserAvatar(avatar) {
+        this._userAvatar.src = avatar;
+    }
+
 
 }
 

@@ -1,9 +1,17 @@
-import { renderLoading } from "../utils/utils";
+
 
 export default class Api {
     constructor({ baseUrl, headers }) {
         this._baseUrl = baseUrl;
         this._headers = headers;
+    }
+
+    _returnRes(res) {
+        if (res.ok) {
+            return res.json();
+        } else {
+            return Promise.reject(`Error: ${res.status}`);
+        }
     }
 
     getCardList() {
@@ -12,13 +20,8 @@ export default class Api {
             headers: this._headers,
         })
             .then(res => {
-                if (res.ok) {
-                    return res.json();
-                } else {
-                    return Promise.reject(`Error: ${res.status}`);
-                }
+                return this._returnRes(res);
             })
-            .catch((err) => console.log(err));
     }
 
     getUserInfo() {
@@ -27,13 +30,8 @@ export default class Api {
             headers: this._headers,
         })
             .then(res => {
-                if (res.ok) {
-                    return res.json();
-                } else {
-                    return Promise.reject(`Error: ${res.status}`);
-                }
+                return this._returnRes(res);
             })
-            .catch((err) => console.log(err));
     }
 
     setUserInfo({ name, about }) {
@@ -46,16 +44,8 @@ export default class Api {
             })
         })
             .then(res => {
-                if (res.ok) {
-                    return res.json();
-                } else {
-                    return Promise.reject(`Error: ${res.status}`);
-                }
+                return this._returnRes(res);
             })
-            .catch((err) => console.log(err))
-            .finally(() => {
-                renderLoading(false);
-            });
     }
 
     addCard({ name, link }) {
@@ -68,16 +58,8 @@ export default class Api {
             })
         })
             .then(res => {
-                if (res.ok) {
-                    return res.json();
-                } else {
-                    return Promise.reject(`Error: ${res.status}`);
-                }
+                return this._returnRes(res);
             })
-            .catch((err) => console.log(err))
-            .finally(() => {
-                renderLoading(false);
-            });
     }
 
     removeCard(cardId) {
@@ -86,16 +68,8 @@ export default class Api {
             headers: this._headers,
         })
             .then(res => {
-                if (res.ok) {
-                    return res.json();
-                } else {
-                    return Promise.reject(`Error: ${res.status}`);
-                }
+                return this._returnRes(res);
             })
-            .catch((err) => console.log(err))
-            .finally(() => {
-                renderLoading(false);
-            });
     }
 
     setUserAvatar(avatar) {
@@ -107,15 +81,7 @@ export default class Api {
             })
         })
             .then(res => {
-                if (res.ok) {
-                    return res.json();
-                } else {
-                    return Promise.reject(`Error: ${res.status}`);
-                }
-            })
-            .catch((err) => console.log(err))
-            .finally(() => {
-                renderLoading(false);
+                return this._returnRes(res);
             });
     }
 
@@ -128,13 +94,8 @@ export default class Api {
             headers: this._headers,
         })
             .then(res => {
-                if (res.ok) {
-                    return res.json();
-                } else {
-                    return Promise.reject(`Error: ${res.status}`);
-                }
+                return this._returnRes(res);
             })
-            .catch((err) => console.log(err));
     }
 
     removeLike(cardId) {
@@ -143,13 +104,8 @@ export default class Api {
             headers: this._headers,
         })
             .then(res => {
-                if (res.ok) {
-                    return res.json();
-                } else {
-                    return Promise.reject(`Error: ${res.status}`);
-                }
+                return this._returnRes(res);
             })
-            .catch((err) => console.log(err));
     }
 
 

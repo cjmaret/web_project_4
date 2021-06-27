@@ -24,6 +24,14 @@ export const profileImageOverlay = document.querySelector(".profile__image-overl
 
 export const submitButton = document.querySelector(".edit-box__button");
 
+export const addCardSubmitButton = document.querySelector(".edit-box__button_add");
+
+export const deleteCardSubmitButton = document.querySelector(".edit-box__button_delete-card");
+
+export const editProfileSubmitButton = document.querySelector(".edit-box__button_edit");
+
+export const profileImageSubmitButton = document.querySelector(".edit-box__button_profile-image");
+
 export const initialCards = [
     {
         name: "Yosemite Valley",

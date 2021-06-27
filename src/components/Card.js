@@ -27,21 +27,23 @@ export default class Card {
 
     // Toggle Hearts //
 
-    _addHeart() {
+    addHeart() {
         const heartButton = this._element.querySelector(".image-card__heart");
         const heartNumber = this._element.querySelector(".image-card__heart-number");
 
         heartButton.classList.add("image-card__heart_liked");
-        heartNumber.textContent = (this._cardLikes += 1);
+        heartNumber.textContent = this._likesArray.length;
     };
 
-    _removeHeart() {
+    removeHeart() {
         const heartButton = this._element.querySelector(".image-card__heart");
         const heartNumber = this._element.querySelector(".image-card__heart-number");
 
         heartButton.classList.remove("image-card__heart_liked");
-        heartNumber.textContent = (this._cardLikes -= 1);
-        if (heartNumber.textContent = "0") {
+
+
+        heartNumber.textContent = this._likesArray.length;
+        if (this._cardLikes === 0) {
             heartNumber.textContent = "";
         }
     };
@@ -52,6 +54,10 @@ export default class Card {
         const trashButton = this._element.querySelector(".image-card__trash");
         trashButton.closest(".image-card").remove();
     };
+
+    updateLikes(resArray) {
+        return this._likesArray = resArray;
+    }
 
 
     _setEventListeners() {

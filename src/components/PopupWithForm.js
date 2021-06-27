@@ -1,19 +1,17 @@
 import Popup from "./Popup.js";
-import {renderLoading} from "../utils/utils.js";
 
 export default class PopupWithForm extends Popup {
-
-    constructor({ popupSelector, handleFormSubmit }) {
+    constructor({ popupSelector, handleFormSubmit, submitButton }) {
         super(popupSelector);
         this._handleFormSubmit = handleFormSubmit;
         this._inputList = this._popupElement.querySelectorAll(".edit-box__input");
         this._formElement = this._popupElement.querySelector(".edit-box");
-
+        this._submitButton = submitButton;
     }
-
     
     close() {
         super.close();
+        this.renderLoading(false);
         this._formElement.reset();
     }
 
@@ -26,13 +24,21 @@ export default class PopupWithForm extends Popup {
         return this._formValues;
     }
 
+    renderLoading(isLoading) {
+        if (isLoading) {
+            this._submitButton.textContent = "Saving...";
+        } else {
+            this._submitButton.textContent = this._submitButton.dataset.textcontent;
+    
+        }
+    }
+
     setEventListeners() {
         super.setEventListeners();
         this._formElement.addEventListener('submit', (evt) => {
             evt.preventDefault(); 
-            renderLoading(true);         
+            this.renderLoading(true);         
             this._handleFormSubmit(this._getInputValues());
-            this.close();
         })
     }
 

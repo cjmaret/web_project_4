@@ -131,9 +131,6 @@ openEditFormButton.addEventListener('click', () => {
 });
 
 
-
-console.log(newUser.getUserInfo());
-
 const addCardPopup = new PopupWithForm({
     popupSelector: '.modal_type_add',
     handleFormSubmit: (data) => {
@@ -143,20 +140,13 @@ const addCardPopup = new PopupWithForm({
                 imagePopup.open({ name, link });
             }
         }, "#image-card-template");
-        const cardElement = newCard.generateCard();
-        cardsList.addItem(cardElement);
-        console.log(addCardPopup._getInputValues());
+        const newCardElement = newCard.generateCard();
+        cardsList.addItem(newCardElement);
     }
 });
 addCardPopup.setEventListeners();
 
 openAddFormButton.addEventListener('click', () => { addCardPopup.open() });
-
-
-
-
-
-
 
 
 // initialCards.forEach(data => {
@@ -173,15 +163,15 @@ openAddFormButton.addEventListener('click', () => { addCardPopup.open() });
 // editForm.addEventListener("submit", addProfileInfo);
 
 
-addForm.addEventListener("submit", function (evt) {
-    evt.preventDefault();
-    const card = new Card({ name: inputImageTitle.value, link: inputImageLink.value }, "#image-card-template");
+// addForm.addEventListener("submit", function (evt) {
+//     evt.preventDefault();
+//     const card = new Card({ name: inputImageTitle.value, link: inputImageLink.value }, "#image-card-template");
 
-    const cardElement = card.generateCard();
+//     const cardElement = card.generateCard();
 
-    imageGrid.prepend(cardElement);
-    closePopUp(addPopUp);
-});
+//     imageGrid.prepend(cardElement);
+//     closePopUp(addPopUp);
+// });
 
 
 

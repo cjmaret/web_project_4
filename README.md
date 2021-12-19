@@ -9,6 +9,7 @@ This project is part of the Practicum Web Development course. It's an interactiv
 ## Upcoming: 
 In the future, JS will allow for users to upload photos by clicking on the "Add' button, as well as upload a photo to serve as their profile photo.
 
+### Edit: You can check out the complete, finished site [here!](https://github.com/cjmaret/react-around-api-full)
 
 ### [Live Project](https://cjmaret.github.io/web_project_4/)
 ### [Github Link](https://github.com/cjmaret/web_project_4)

@@ -13,4 +13,3 @@ In the future, JS will allow for users to upload photos by clicking on the "Add'
 
 ### [Live Project](https://cjmaret.github.io/web_project_4/)
 ### [Github Link](https://github.com/cjmaret/web_project_4)
-### [Server Domain](http://api.cjmaret.students.nomoreparties.site)
